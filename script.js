@@ -391,5 +391,3 @@ document.querySelector(".footer-box p").innerText=
 }
 
 }
-
-alert("SCRIPT JS LOADED");
