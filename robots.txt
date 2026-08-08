@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fancy-snickerdoodle-b68f2b.netlify.app/sitemap.xml
