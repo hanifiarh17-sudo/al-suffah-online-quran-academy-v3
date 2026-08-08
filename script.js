@@ -781,9 +781,105 @@ function updateFooter() {
         const socialTitle =
             footerBoxes[2].querySelector("h3");
 
-        if (quickLinksTitle) {
+                if (quickLinksTitle) {
 
             quickLinksTitle.innerText =
                 lang === "ur"
                     ? "فوری لنکس"
+                    : "Quick Links";
+        }
+
+        if (socialTitle) {
+
+            socialTitle.innerText =
+                lang === "ur"
+                    ? "ہمیں فالو کریں"
+                    : "Follow Us";
+        }
+
+    }
+
+    const copyright = document.querySelector(".copyright");
+
+    if (copyright) {
+
+        copyright.innerHTML =
+            lang === "ur"
+                ? `© ${new Date().getFullYear()} الصفہ آن لائن قرآن اکیڈمی۔ جملہ حقوق محفوظ ہیں۔`
+                : `© ${new Date().getFullYear()} Al Suffah Online Quran Academy. All Rights Reserved.`;
+
+    }
+
+}
+
+
+// ======================================================
+// LANGUAGE BUTTON
+// ======================================================
+
+if (langBtn) {
+
+    langBtn.addEventListener("click", () => {
+
+        lang = lang === "en" ? "ur" : "en";
+
+        updateNavigationAndHero();
+        updateMainSections();
+        updateAboutCards();
+        updateFeatureCards();
+        updateCourseCards();
+        updateFeesCard();
+        updateVideoSection();
+        updateReviews();
+        updateFAQ();
+        updateContact();
+        updateFooter();
+
+        langBtn.innerHTML =
+            lang === "en"
+                ? "🌐 English | اردو"
+                : "🌐 اردو | English";
+
+    });
+
+}
+
+
+// ======================================================
+// VIDEO PLAY BUTTON
+// ======================================================
+
+const playBtn = document.querySelector(".play-btn");
+
+if (playBtn) {
+
+    playBtn.addEventListener("click", () => {
+
+        window.open(
+            "https://youtu.be/YOUR_VIDEO_LINK",
+            "_blank"
+        );
+
+    });
+
+}
+
+
+// ======================================================
+// INITIAL LANGUAGE
+// ======================================================
+
+updateNavigationAndHero();
+updateMainSections();
+updateAboutCards();
+updateFeatureCards();
+updateCourseCards();
+updateFeesCard();
+updateVideoSection();
+updateReviews();
+updateFAQ();
+updateContact();
+updateFooter();
+
+console.log("Al Suffah Online Quran Academy Loaded Successfully.");
        
