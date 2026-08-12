@@ -118,8 +118,8 @@ topBtn.addEventListener("click", () => {
 });
 
 
-// ======================================================
-// CONTACT FORM
+// ==// ======================================================
+// CONTACT FORM - WHATSAPP
 // ======================================================
 
 const form = document.querySelector("form");
@@ -130,11 +130,28 @@ if (form) {
 
         e.preventDefault();
 
-        alert(
-            lang === "ur"
-                ? "شکریہ! ہم جلد آپ سے رابطہ کریں گے۔"
-                : "Thank you! We will contact you soon."
-        );
+        const name = form.querySelector('input[type="text"]').value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const country = form.querySelectorAll('input[type="text"]')[1].value.trim();
+        const message = form.querySelector("textarea").value.trim();
+
+        const whatsappMessage =
+`Assalamu Alaikum Al Suffah Online Quran Academy,
+
+New Contact Form Message:
+
+Name: ${name}
+Email: ${email}
+Country: ${country}
+
+Message:
+${message}`;
+
+        const whatsappURL =
+            "https://wa.me/923277624720?text=" +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappURL, "_blank");
 
         form.reset();
 
